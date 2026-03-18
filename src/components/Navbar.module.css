@@ -1,0 +1,96 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 52px;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s;
+}
+
+.navScrolled {
+  background: rgba(6,6,8,0.88);
+  border-color: var(--border);
+  backdrop-filter: blur(20px);
+}
+
+/* ── Logo ── */
+.logo {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: var(--fg);
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+.logoAccent { color: var(--fg); }
+.logoDot    { color: var(--accent); font-size: 28px; line-height: 0; }
+
+/* ── Links ── */
+.navLinks {
+  display: flex;
+  gap: 38px;
+  list-style: none;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+.bar {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--fg);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.barOpen1 { transform: translateY(6.5px) rotate(45deg); }
+.barOpen2 { opacity: 0; }
+.barOpen3 { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile menu ── */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 105;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+.mobileLink {
+  font-family: var(--font-display);
+  font-size: 48px;
+  letter-spacing: 3px;
+  color: var(--fg);
+  transition: color 0.2s;
+}
+.mobileLink:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .nav { padding: 20px 24px; }
+  .navLinks, .navCta { display: none; }
+  .hamburger { display: flex; }
+  .mobileMenu { display: flex; }
+}

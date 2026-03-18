@@ -1,0 +1,111 @@
+.section {
+  padding: 0 52px 120px;
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+/* ── Card ── */
+.card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: filter 0.55s ease, transform 0.65s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 32px;
+  transition: background 0.4s ease;
+}
+
+/* top meta row */
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.year {
+  font-family: var(--font-body);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.3);
+}
+.tag {
+  font-family: var(--font-body);
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: #060608;
+  background: var(--accent);
+  padding: 4px 12px;
+}
+
+/* bottom content */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: var(--fg);
+  line-height: 1;
+}
+.desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #686878;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.35s ease;
+  font-weight: 400;
+}
+.viewLink {
+  font-family: var(--font-body);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+@media (max-width: 900px) {
+  .section { padding: 0 24px 80px; }
+  .grid    { grid-template-columns: 1fr; }
+}
+
+/* ── Skeleton loader ── */
+.skeleton {
+  aspect-ratio: 4 / 3;
+  background: var(--card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+.skeletonShimmer {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0%  { background-position: -200% 0; }
+  100%{ background-position:  200% 0; }
+}

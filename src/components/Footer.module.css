@@ -1,0 +1,122 @@
+.footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 88px 52px 44px;
+}
+
+/* ── Top ── */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+/* Brand block */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 42px;
+  letter-spacing: 4px;
+  color: var(--fg);
+  display: flex;
+  align-items: baseline;
+}
+.logoAccent { color: var(--fg); }
+.logoDot    { color: var(--accent); font-size: 44px; line-height: 0; }
+
+.tagline {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #30303a;
+  font-weight: 400;
+  max-width: 240px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+.social {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border);
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 700;
+  color: #30303a;
+  transition: border-color 0.2s, color 0.2s;
+}
+.social:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Columns */
+.columns {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+.col { min-width: 120px; }
+
+.colTitle {
+  font-family: var(--font-body);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.footerLink {
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+/* ── Bottom ── */
+.bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copy {
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1px;
+  color: #28282f;
+}
+
+.madeby {
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1px;
+  color: #28282f;
+}
+.accentText { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .footer { padding: 64px 24px 36px; }
+  .top    { flex-direction: column; gap: 48px; }
+  .columns { gap: 36px; }
+}
